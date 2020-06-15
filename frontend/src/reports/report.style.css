@@ -1,0 +1,25 @@
+.tr-table {
+    font-size: 11px;
+}
+
+.tbody-table {
+    font-size: 11px;
+}
+
+.btn {
+    margin-right: 5px;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    font-size: .700rem;
+}
+
+.card {
+    background-color: #8D4E8D;
+    border-radius: 10px;
+    border: 3px solid #8D4E8D;
+    overflow: hidden;
+    margin: 10px;
+   
+}
+
