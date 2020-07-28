@@ -56,7 +56,8 @@ export default class LayoutCore extends React.Component {
                     </Menu>
                 </Sider>
                 <Layout className="site-layout">
-                    <MasterHeader></MasterHeader>
+                    <MasterHeader/>
+                  
                     <Header className="site-layout-background" style={{ padding: 0 }}>
                         {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                             className: 'trigger',
@@ -74,7 +75,7 @@ export default class LayoutCore extends React.Component {
 
                     </Content>
                     <div style= {{fontSize: '11px'}} className="card-footer text-muted">
-                        AWT Airworthiness App ©2020 Created by Re44e
+                        AWT Airworthiness ©2020 Created by Re44e
                     </div>
                 </Layout>
 

@@ -96,13 +96,13 @@ export default class Reports extends Component {
 
             <div>
                 <div className="container">
-                    <h5>Inspection Reports</h5><small>Monitoring of Reports</small>
+                    <h5>Current Storage</h5><small>Record List</small>
                     <div className="row">
                         <div className="col-lg">
                             <ReportList handleEdit={this.handleEdit} handleRemove={this.handleRemove} list={this.state.list}></ReportList>
                         </div>
                         <div className="col-lg">
-                            <h6>Inspection Registration</h6>
+                            <h6>Document Registration</h6>
                             <ReportForm
                                 number={this.state.number}
                                 type={this.state.type}
