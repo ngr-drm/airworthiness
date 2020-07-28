@@ -1,5 +1,4 @@
 import React from 'react';
-import './report.style.css';
 
 export default (props) => {
     const form = {

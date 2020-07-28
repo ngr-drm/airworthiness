@@ -2,13 +2,26 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import ReportList from './report.list';
 import ReportForm from './report.form';
+import './report.style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faCalculator } from '@fortawesome/free-solid-svg-icons';
+
 
 const URL = 'http://localhost:3003/'
 export default class Reports extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { list: [], key: '', number: '', type: '', aircraft: '', engine: '' };
+        this.state = {
+            list: [],
+            key: '',
+            number: '',
+            type: '',
+            aircraft: '',
+            engine: '',
+            docs: ''
+        };
         this.handleOnChange = this.handleOnChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
@@ -19,7 +32,7 @@ export default class Reports extends Component {
     componentDidMount() {
         axios.get(`${URL}reports`)
             .then((resp) => {
-                this.setState({ list: resp.data });
+                this.setState({ list: resp.data, docs: resp.data.length });
             });
     }
 
@@ -96,10 +109,13 @@ export default class Reports extends Component {
 
             <div>
                 <div className="container">
-                    <h5>Current Storage</h5><small>Record List</small>
+                    <h5><FontAwesomeIcon icon={faDatabase}></FontAwesomeIcon> Current Storage</h5><small>Record List</small>
                     <div className="row">
                         <div className="col-lg">
                             <ReportList handleEdit={this.handleEdit} handleRemove={this.handleRemove} list={this.state.list}></ReportList>
+                            <small>
+                                <FontAwesomeIcon style={{ color: 'red' }} icon={faCalculator}></FontAwesomeIcon> Number of Records: {this.state.docs} 
+                            </small>
                         </div>
                         <div className="col-lg">
                             <h6>Document Registration</h6>
